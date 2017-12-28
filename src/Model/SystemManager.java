@@ -99,12 +99,4 @@ public class SystemManager {
     	return allUserFiles;
     }
 
-//    public void findDirectory(){
-//        JFileChooser directoryChooser = new JFileChooser();
-//        File selectedFile = directoryChooser.getSelectedFile();
-//        if (selectedFile != null){
-//            directories.add(new Directory(selectedFile.getAbsolutePath()));
-//        }
-//    }
-
 }
