@@ -40,7 +40,8 @@ public class ConsoleController {
 
         for (UserFile file: ufiles){
             try {
-                temp = file.getFileName() + "     " + file.getLastAccessedDate();
+                //temp = file.getFileName() + "     " + file.getLastAccessedDate();
+                temp = String.format("%-80s %s", file.getFileName(), file.getLastAccessedDate());
                 System.out.println(temp);
             }
             catch (Exception e){

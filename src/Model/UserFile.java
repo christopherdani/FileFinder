@@ -43,18 +43,22 @@ public class UserFile{
      * @return String
      */
     public String getFileName(){
+        if (fileName.length() > 80){
+            return fileName.substring(0,70).concat("...");
+        }
         return fileName;
     }
 
     /**
      * Returns the last modification date of this file.
      *
-     * @return Date
+     * @return Date in the format of YYYY-MM-DD
      */
     public String getLastAccessedDate() throws IOException {
         Path thisUserFile = Paths.get(this.file.getAbsolutePath());
         BasicFileAttributes fileAttributes = Files.readAttributes(thisUserFile, BasicFileAttributes.class);
-        return fileAttributes.lastAccessTime().toString();
+        //Only show date
+        return fileAttributes.lastAccessTime().toString().substring(0,9);
     }
 
 }
